@@ -7,7 +7,7 @@ export default async function StartPage() {
   const dataPath = path.join(process.cwd(), 'public', 'data', 'physics_en_COMP.json');
   let subfields: string[] = [];
   // also compute counts for each subfield
-  let subfieldCounts: Record<string, number> = {};
+  const subfieldCounts: Record<string, number> = {};
   try {
     const raw = await readFile(dataPath, 'utf-8');
     const items = JSON.parse(raw) as Array<{ subfield: string }>;
